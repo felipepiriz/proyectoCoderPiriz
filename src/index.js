@@ -4,6 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY || '',
+  authDomain: "proyecto-coder-21edf.firebaseapp.com",
+  projectId: "proyecto-coder-21edf",
+  storageBucket: "proyecto-coder-21edf.appspot.com",
+  messagingSenderId: "108255314151",
+  appId: "1:108255314151:web:364a28138aae3ce2c52242",
+  measurementId: process.env.REACT_APP_FIREBASE_MEASURE_ID || ''
+ };
+
+initializeApp(firebaseConfig);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -11,7 +25,4 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
